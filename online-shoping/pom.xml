@@ -1,5 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <properties>
+  	<javaee.version>7.0</javaee.version>
+  	<spring.version>4.3.6.RELESE</spring.version>
+  </properties>
   <modelVersion>4.0.0</modelVersion>
   <groupId>srinathji</groupId>
   <artifactId>online-shoping</artifactId>
@@ -8,13 +12,34 @@
   <name>online-shoping Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  	<!-- junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- javaee -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>${javaee.version}</version>
+      <scope>provide</scope>
+    </dependency>
+ 	
+ 	
+ 	<!-- spring -->
+ 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>4.3.6.RELEASE</version>
+	</dependency>
+ 	
   </dependencies>
+  
+ 
   <build>
     <finalName>online-shoping</finalName>
   </build>
