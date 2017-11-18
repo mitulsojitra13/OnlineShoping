@@ -13,6 +13,6 @@ import java.util.List;
  * @author Galaxy
  */
 public interface CategoryDao {
-    List<Category> list();
-    
+    public List<Category> list();
+    public Category get(int id);
 }

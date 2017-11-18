@@ -45,5 +45,14 @@ public class CatgoryDAOImpl implements CategoryDao{
     public List<Category> list() {
         return catogeryList;
     }
+
+    @Override
+    public Category get(int id) {
+        for(Category catogery : catogeryList)
+        {
+            if(catogery.getId()==id) return catogery;
+        }
+            return null;
+    }
     
 }

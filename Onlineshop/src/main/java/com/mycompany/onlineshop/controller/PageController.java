@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.mycompany.onlineshopback.dao.CategoryDao;
+import com.mycompany.onlineshopback.dto.Category;
+import org.springframework.web.bind.annotation.PathVariable;
 /**
  *
  * @author Galaxy
@@ -60,7 +62,25 @@ public class PageController {
         mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
+    @RequestMapping(value={"/show/all/products"})
+    public ModelAndView showAllProducts(){
+        ModelAndView mv=new ModelAndView("page");
+        mv.addObject("userClickAllProduct", true);
+        mv.addObject("title","Product");
+        mv.addObject("catogerys",catogeryDao.list());
+        return mv;
+    }
     
-    
-    
+    @RequestMapping(value={"/show/catogery/{id}/product"})
+    public ModelAndView showCatogeryProducts(@PathVariable("id") int id){
+        Category catogory=null;
+        catogory=catogeryDao.get(id);
+        ModelAndView mv=new ModelAndView("page");
+        mv.addObject("userClickCatogeryProduct", true);
+        mv.addObject("title",catogory.getName());
+        //passing catogery
+        mv.addObject("catogery",catogory);
+        mv.addObject("catogerys",catogeryDao.list());
+        return mv;
+    }
 }

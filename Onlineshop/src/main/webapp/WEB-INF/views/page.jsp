@@ -78,8 +78,11 @@ switch (menu)
           <div class="row">
         <!--side Menu -->
        
+            <%@include file="shared/sidemenu.jsp" %>
+       
+     
         <!--side Menu -->
-        <%@include file="shared/sidemenu.jsp" %>
+        
         <!-- /.col-lg-3 -->
       <!-- /.col-lg-3 -->
      <div class="col-lg-9">
@@ -100,7 +103,10 @@ switch (menu)
              <%@include file="pages/services.jsp" %>    
         </c:if>
         <c:if test="${userClickProduct==true}">
-            <%@include file="pages/product.jsp" %>             
+            <%@include file="listproduct.jsp" %>             
+        </c:if>
+        <c:if test="${userClickCatogeryProduct==true or userClickAllProduct==true}">
+            <%@include file="listproduct.jsp" %>             
         </c:if>
         </div>
      
