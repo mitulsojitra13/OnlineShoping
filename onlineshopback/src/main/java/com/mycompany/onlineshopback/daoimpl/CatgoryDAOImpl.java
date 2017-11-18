@@ -9,11 +9,13 @@ import com.mycompany.onlineshopback.dao.CategoryDao;
 import com.mycompany.onlineshopback.dto.Category;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Galaxy
  */
+@Repository("catogeryDao")
 public class CatgoryDAOImpl implements CategoryDao{
 
     private static List<Category> catogeryList=new ArrayList<>();
@@ -41,7 +43,7 @@ public class CatgoryDAOImpl implements CategoryDao{
   
     @Override
     public List<Category> list() {
-        return null;
+        return catogeryList;
     }
     
 }

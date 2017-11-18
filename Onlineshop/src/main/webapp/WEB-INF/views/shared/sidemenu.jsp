@@ -4,12 +4,13 @@
     Author     : Galaxy
 --%>
 
+
 <div class="col-lg-3">
 
 <h1 class="my-4">Srinathji</h1>
  <div class="list-group">
-     <a href="#" class="list-group-item">Category 1</a>
-    <a href="#" class="list-group-item">Category 2</a>
-    <a href="#" class="list-group-item">Category 3</a>
+     <c:forEach items="${catogerys}" var="catogery">
+         <a href="#" class="list-group-item">${catogery.name}</a>
+     </c:forEach>
  </div>
  </div>

@@ -16,12 +16,14 @@ import com.mycompany.onlineshopback.dao.CategoryDao;
  */
 @Controller
 public class PageController {
+    @Autowired
+    private CategoryDao catogeryDao;
     @RequestMapping(value={"/","/home","/index"})
     public ModelAndView index(){
         ModelAndView mv=new ModelAndView("page");
         mv.addObject("userClickHome", true);
         mv.addObject("title","Home");
-        
+        mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
    
@@ -30,6 +32,7 @@ public class PageController {
         ModelAndView mv=new ModelAndView("page");
         mv.addObject("userClickAbout", true);
         mv.addObject("title","About US");
+        mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
     
@@ -38,6 +41,7 @@ public class PageController {
         ModelAndView mv=new ModelAndView("page");
         mv.addObject("userClickContact", true);
         mv.addObject("title","Contact US");
+        mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
     @RequestMapping(value={"/services"})
@@ -45,6 +49,7 @@ public class PageController {
         ModelAndView mv=new ModelAndView("page");
         mv.addObject("userClickServices", true);
         mv.addObject("title","Services");
+        mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
     @RequestMapping(value={"/product"})
@@ -52,6 +57,7 @@ public class PageController {
         ModelAndView mv=new ModelAndView("page");
         mv.addObject("userClickProduct", true);
         mv.addObject("title","Product");
+        mv.addObject("catogerys",catogeryDao.list());
         return mv;
     }
     
